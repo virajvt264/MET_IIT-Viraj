@@ -15,10 +15,8 @@ public:
         return 2 * (length * breadth + breadth * height + height * length) * 0.03;
     }
 
-    virtual double Capacity() const
-    {
-        return length * breadth * height;
-    }
+    //declaring member function
+    virtual double Capacity() const;
 
     double Diagonal() const
     {
@@ -32,6 +30,12 @@ public:
 private:
     float length, breadth, height;
 };
+
+//defining function Capacity declared as member of class Box
+double Box::Capacity() const
+{
+    return length * breadth * height;
+}
 
 //Defining RigidBox as a derived class of Box(base class)
 class RigidBox : public Box
